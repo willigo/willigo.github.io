@@ -1,110 +1,52 @@
-/* make sidebar nav vertical */ 
-@media (min-width: 768px){
-  .affix-content .container {
-    width: 700px;
-  }   
-
-  html,body{
-    background-color: #f8f8f8;
-    height: 100%;
-    overflow: hidden;
-  }
-    .affix-content .container .page-header{
-    margin-top: 0;
-  }
-  .sidebar-nav{
-        position:fixed; 
-        width:100%;
-  }
-  .affix-sidebar{
-    padding-right:0; 
-    font-size:small;
-    padding-left: 0;
-  }  
-  .affix-row, .affix-container, .affix-content{
-    height: 100%;
-    margin-left: 0;
-    margin-right: 0;    
-  } 
-  .affix-content{
-    background-color:white; 
-  } 
-  .sidebar-nav .navbar .navbar-collapse {
-    padding: 0;
-    max-height: none;
-  }
-  .sidebar-nav .navbar{
-    border-radius:0; 
-    margin-bottom:0; 
-    border:0;
-  }
-  .sidebar-nav .navbar ul {
-    float: none;
-    display: block;
-  }
-  .sidebar-nav .navbar li {
-    float: none;
-    display: block;
-  }
-  .sidebar-nav .navbar li a {
-    padding-top: 12px;
-    padding-bottom: 12px;
-  }  
+#wrapper {
+  padding-left: 250px;
+  transition: all 0.4s ease 0s;
 }
 
-@media (min-width: 769px){
-  .affix-content .container {
-    width: 600px;
-  }
-    .affix-content .container .page-header{
-    margin-top: 0;
-  }  
+#sidebar-wrapper {
+  margin-left: -250px;
+  left: 250px;
+  width: 250px;
+  background: #000;
+  position: fixed;
+  height: 100%;
+  overflow-y: auto;
+  z-index: 1000;
+  transition: all 0.4s ease 0s;
 }
 
-@media (min-width: 992px){
-  .affix-content .container {
-  width: 900px;
-  }
-    .affix-content .container .page-header{
-    margin-top: 0;
-  }
+#page-content-wrapper {
+  width: 100%;
 }
 
-@media (min-width: 1220px){
-  .affix-row{
-    overflow: hidden;
-  }
+.sidebar-nav {
+  position: absolute;
+  top: 0;
+  width: 250px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
 
-  .affix-content{
-    overflow: auto;
-  }
+@media (max-width:767px) {
 
-  .affix-content .container {
-    width: 1000px;
-  }
+    #wrapper {
+      padding-left: 0;
+    }
 
-  .affix-content .container .page-header{
-    margin-top: 0;
-  }
-  .affix-content{
-    padding-right: 30px;
-    padding-left: 30px;
-  }  
-  .affix-title{
-    border-bottom: 1px solid #ecf0f1; 
-    padding-bottom:10px;
-  }
-  .navbar-nav {
-    margin: 0;
-  }
-  .navbar-collapse{
-    padding: 0;
-  }
-  .sidebar-nav .navbar li a:hover {
-    background-color: #428bca;
-    color: white;
-  }
-  .sidebar-nav .navbar li a > .caret {
-    margin-top: 8px;
-  }  
+    #sidebar-wrapper {
+      left: 0;
+    }
+
+    #wrapper.active {
+      position: relative;
+      left: 250px;
+    }
+
+    #wrapper.active #sidebar-wrapper {
+      left: 250px;
+      width: 250px;
+      transition: all 0.4s ease 0s;
+    }
+
 }
