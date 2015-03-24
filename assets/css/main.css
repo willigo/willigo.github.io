@@ -1,52 +1,66 @@
-#wrapper {
-  padding-left: 250px;
-  transition: all 0.4s ease 0s;
+body {
+  padding-top:50px;
 }
 
-#sidebar-wrapper {
-  margin-left: -250px;
-  left: 250px;
-  width: 250px;
-  background: #000;
-  position: fixed;
-  height: 100%;
-  overflow-y: auto;
-  z-index: 1000;
-  transition: all 0.4s ease 0s;
+#masthead {
+  min-height:270px;
+  background-color:#000044;
+    color:#aaaacc;
 }
 
-#page-content-wrapper {
-  width: 100%;
+#masthead h1 {
+  font-size: 55px;
+  line-height: 1;
 }
 
-.sidebar-nav {
-  position: absolute;
-  top: 0;
-  width: 250px;
-  list-style: none;
-  margin: 0;
-  padding: 0;
+#masthead .well {
+  margin-top:13%;
+  background-color:#111155;
+    border-color:#000033;
 }
 
-@media (max-width:767px) {
+.icon-bar {
+  background-color:#fff;
+}
 
-    #wrapper {
-      padding-left: 0;
-    }
+@media screen and (min-width: 768px) {
+  #masthead h1 {
+    font-size: 100px;
+  }
+}
 
-    #sidebar-wrapper {
-      left: 0;
-    }
+.navbar-bright {
+  background-color:#111155;
+    color:#fff;
+}
+  
+.navbar-bright a, #masthead a, #masthead .lead {
+    color:#aaaacc;
+}
 
-    #wrapper.active {
-      position: relative;
-      left: 250px;
-    }
+.navbar-bright li > a:hover {
+    background-color:#000033;
+}
 
-    #wrapper.active #sidebar-wrapper {
-      left: 250px;
-      width: 250px;
-      transition: all 0.4s ease 0s;
-    }
+.affix-top,.affix{
+  position: static;
+}
 
+@media (min-width: 979px) {
+  #sidebar.affix-top {
+    position: static;
+    margin-top:30px;
+    width:228px;
+  }
+  
+  #sidebar.affix {
+    position: fixed;
+    top:70px;
+    width:228px;
+  }
+}
+
+#sidebar li.active {
+    border:0 #eee solid;
+    border-right-width:4px;
 }
